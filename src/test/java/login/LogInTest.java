@@ -11,11 +11,17 @@ public class LogInTest extends ScriptBase {
     public void init(){
         beforeTest();
     }
-    @Test
+
+    @Test (priority = 1)
     public  void  verifySignInButtonDisplayed() {
         logInController = new LogInController(driver);
         logInController.signInButtonDisplayed();
 
     }
+    @Test (priority =  2)
+    public  void  verifyInvalidLogIn() throws InterruptedException {
+        logInController = new LogInController(driver);
+        logInController.signIn();
 
+    }
 }
