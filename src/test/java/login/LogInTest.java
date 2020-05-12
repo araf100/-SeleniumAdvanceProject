@@ -7,10 +7,11 @@ import pageController.LogInController;
 
 public class LogInTest extends ScriptBase {
     LogInController logInController;
-    @BeforeTest
+
+    /*@BeforeTest
     public void init(){
         beforeTest();
-    }
+    }*/
 
     @Test (priority = 1)
     public  void  verifySignInButtonDisplayed() {
