@@ -28,7 +28,7 @@ public class LogInController {
     public  void signInButtonDisplayed(){
         signInButton.isDisplayed();
     }
-public  void signIn(WebDriver driver,String  message) throws InterruptedException {
+    public  void signIn(WebDriver driver,String  message) throws InterruptedException {
         Thread.sleep(1000);
     signInButton.click();
     userName.sendKeys("abcd@gmail.com");
