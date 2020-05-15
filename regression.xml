@@ -2,18 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite" parallel="tests" >
 
-    <parameter name="browser" value="chrome"></parameter>
-    <test name="smokeTest">
+    <test name="chromeTest">
+        <parameter name="browser" value="chrome"></parameter>
 <classes>
-
     <class name="login.LogInTest">
 <methods>
     <include name="verifySignInButtonDisplayed"/>
     <include name="verifyInvalidLogIn"/>
 </methods>
-
     </class>
 </classes>
+    </test>
+
+    <test name="firefoxTest">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="login.LogInTest">
+                <methods>
+                    <include name="verifySignInButtonDisplayed"/>
+                    <include name="verifyInvalidLogIn"/>
+                </methods>
+            </class>
+        </classes>
 
     </test>
 
