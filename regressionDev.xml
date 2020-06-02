@@ -4,6 +4,7 @@
 
     <test name="chromeTest">
         <parameter name="browser" value="chrome"></parameter>
+        <parameter name="environment" value="dev"></parameter>
 <classes>
     <class name="login.LogInTest">
 <methods>
@@ -16,6 +17,7 @@
 
     <test name="firefoxTest">
         <parameter name="browser" value="firefox"></parameter>
+        <parameter name="environment" value="dev"></parameter>
         <classes>
             <class name="login.LogInTest">
                 <methods>

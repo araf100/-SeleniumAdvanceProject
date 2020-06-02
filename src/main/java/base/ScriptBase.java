@@ -10,22 +10,35 @@ import org.testng.annotations.Parameters;
 
 public class ScriptBase {
 
-public  WebDriver driver;
+    public WebDriver driver;
 
-    @Parameters("browser")
+    @Parameters({"browser", "environment"})
     @BeforeClass
-    public void beforeTest(String browser){
+    public void beforeTest(String browser, String environment) {
         if (browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver");
             driver = new ChromeDriver();
-        }else if (browser.equalsIgnoreCase("firefox")){
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/drivers/geckodriver");
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/drivers/geckodriver");
             driver = new FirefoxDriver();
         }
-        driver.get("http://automationpractice.com");
+        //to RUN different environment DO if else statement change URL
 
+        if (environment.equalsIgnoreCase("dev")) {
 
-    }
+            driver.get("http://automationpractice_dev.com");
+
+        }else if(environment.equalsIgnoreCase("qa")){
+
+            driver.get("http://automationpractice_qa.com");
+
+        }
+        else if(environment.equalsIgnoreCase("int")){
+            driver.get("http://automationpractice.com");
+
+        }
+
+}
     @AfterClass
     public  void  closeBrowser(){
         driver.quit();
