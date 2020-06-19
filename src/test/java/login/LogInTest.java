@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pageController.LogInController;
 
 public class LogInTest extends ScriptBase {
-    LogInController logInController;
+    LogInController logIn;
 
     /*@BeforeTest
     public void init(){
@@ -15,14 +15,14 @@ public class LogInTest extends ScriptBase {
 
     @Test (priority = 1)
     public  void  verifySignInButtonDisplayed() {
-        logInController = new LogInController(driver);
-        logInController.signInButtonDisplayed();
+        logIn = new LogInController(driver);
+       // logIn.signInButtonDisplayed();
 
     }
     @Test (priority =  2)
     public  void  verifyInvalidLogIn() throws InterruptedException {
-        logInController = new LogInController(driver);
-        logInController.signIn(driver,"There is 1 error");
+        logIn = new LogInController(driver);
+        logIn.signIn(driver,"There is 1 error");
 
     }
 }
