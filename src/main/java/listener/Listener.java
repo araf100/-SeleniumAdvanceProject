@@ -15,23 +15,23 @@ public class Listener extends ScriptBase implements ITestListener {
     }
     public void onTestStart(ITestResult iTestResult) {
 
-        System.out.println("I'm in onTestStart"+getTestMethodName(iTestResult)+" Start");
+        System.out.println("I'm in on---"+getTestMethodName(iTestResult)+"Start");
     }
 
     public void onTestSuccess(ITestResult iTestResult) {
 
-        System.out.println("I'm in onTestSuccess"+getTestMethodName(iTestResult)+" Succeed");
+        System.out.println("I'm in on Test---"+getTestMethodName(iTestResult)+"Success");
     }
 
     //For Failure need Screen short
     public void onTestFailure(ITestResult iTestResult) {
 
-        System.out.println("I'm in onTestFailure"+getTestMethodName(iTestResult)+" Failed");
+        System.out.println("I'm in on Test---"+getTestMethodName(iTestResult)+"Failure");
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
 
-        System.out.println("I'm in onTestSkipped"+getTestMethodName(iTestResult)+" Skipped");
+        System.out.println("I'm in on Test---"+getTestMethodName(iTestResult)+"Skipped");
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
@@ -44,12 +44,12 @@ public class Listener extends ScriptBase implements ITestListener {
 
     public void onStart(ITestContext iTestContext) {
 
-        System.out.println("I'm in onStart"+iTestContext.getName());
+        System.out.println("I'm in on Start"+iTestContext.getName());
     }
 
     public void onFinish(ITestContext iTestContext) {
 
-        System.out.println("I'm in onFinish"+iTestContext.getName());
+        System.out.println("I'm in on Finish"+iTestContext.getName());
 
     }
 }
